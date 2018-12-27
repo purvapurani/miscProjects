@@ -1,0 +1,91 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function positionCar()
+        {
+        var  scrollY = window.scrollY || window.pageYOffset;
+        var  maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+        var  path = document.getElementById("path1");
+        // Calculate distance along the path the car should be for the current scroll amount
+        var  pathLen = path.getTotalLength();
+        var  dist = pathLen * scrollY / maxScrollY;
+        var  pos = path.getPointAtLength(dist);
+        // Calculate position a little ahead of the car (or behind if we are at the end), so we can calculate car angle
+        if (dist + 1 <= pathLen) {
+            var  posAhead = path.getPointAtLength(dist + 1);
+            var  angle = Math.atan2(posAhead.y - pos.y, posAhead.x - pos.x);
+        } else {
+            var  posBehind = path.getPointAtLength(dist - 1);
+            var  angle = Math.atan2(pos.y - posBehind.y, pos.x - posBehind.x);
+        }
+        // Position the car at "pos" totated by "angle"
+        var  car = document.getElementById("car");
+        car.style.opacity = 1;
+        car.setAttribute("transform", "translate(" + (pos.x - 40) + "," + pos.y + ") rotate(" + rad2deg(angle) + ")");
+        }
+
+        function rad2deg(rad) {
+        return 180 * rad / Math.PI - 20;
+        }
+
+        // Reposition car whenever there is a scroll event
+        window.addEventListener("scroll", positionCar);
+
+        // Position the car initially
+        window.addEventListener("load", function(event) {
+			document.getElementsByTagName("svg")[0].style.display = 'block';
+			positionCar();
+		});
+    </script>
+    <style>
+            body {
+            min-height: 3000px;
+            }
+            svg{
+                overflow: visible;
+                max-height: 90vh;
+                width: 100%;
+				display:none;
+            }
+            section{
+                width: calc(100% - 60px);
+                position: fixed;
+                overflow: visible;
+                right: 0;
+                top:0;
+                max-height: 90vh;
+                padding: 0 30px;
+            }
+            #car{
+                width: 200px !important;
+                opacity: 0;
+            }
+
+    </style>
+</head>
+<body>
+<h1>Scroll to begin</h1>
+        <section>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 1120.42 1130.8">
+                <defs>
+                    <style>
+                        .cls-1 {
+                            fill: none;
+                            stroke: #fff;
+                            stroke-miterlimit: 10;
+                        }
+                    </style>
+                </defs>
+                <path id="path1" class="cls-1" d="M5.42,1068.62c92.35,35.82,334.51,115,543.34,5.84,40.71-21.27,70.24-44.52,93.48-62.81,80.75-63.56,263-207,252.68-395.82C889.3,513.41,825.64,373.5,691.9,331c-143.56-45.59-309,39.78-365.15,176.73C278.86,624.51,320.09,755.05,391,830.55c141.77,150.91,434.73,116.54,585.69-14.61C1162.62,654.43,1188.36,298.17,970.87,0"
+                    transform="translate(-5.24 0.29)" />
+                <image width="200" height="110" id="car" transform="" xlink:href="car.png" />
+            </svg>
+        </section>
+        <script>
+                window.addEventListener("load", function(event) {
+					positionCar();
+				});
+        </script>    
+</body>
+</html>

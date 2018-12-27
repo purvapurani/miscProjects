@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>Banorte Sustainability chart</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+  <style>
+    .svg-wrapper {width: 50%;max-width: 395px;}
+	  .svg-wrapper svg{overflow:visible;min-height:395px;max-width:100%;}
+    path.cls-1{fill:#ff671b;}
+    .cls-2{fill:#ea1d2d;}
+    .cls-3{fill:#b11f59;}
+    .hover_area{cursor:pointer;pointer-events: none;}
+    .hover_area image{opacity:1;transition: opacity 0.4s;}
+	  .hover_area path{transition:all 0.4s;pointer-events: all;}
+	  .hover_area a:hover path,.hover_area a:focus path{filter:url(#dropshadow)}
+    .hover_area a:hover image,.hover_area a:focus image{opacity:0;}
+    .cls-1,.small-label,.big-label {fill: #fff;}
+    .cls-3 {isolation: isolate;}
+    .big-label {font-size: 20px;}
+    .small-label,.big-label {font-family: Roboto,Arial;font-weight: 500;}    
+    .small-label {font-size: 15px;opacity:0.6}
+    @media all and (max-width:767px){
+      .svg-wrapper {width: 100%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="svg-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 395.31 394.35">
+      <filter id="dropshadow" height="120%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+        <feOffset dx="2" dy="2" result="offsetblur" />
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.5" />
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+      <g id="center_circle">
+        <path class="cls-1" d="M219.7,167.49,212.63,155a50.49,50.49,0,0,0-44.1,73.47l6.82-11.58a1.5,1.5,0,0,1,1.28-.74l13.65-.12a25.5,25.5,0,0,1,22.34-36Z"
+          transform="translate(-14.69 -7.75)" />
+        <path class="cls-2" d="M257.66,229.92A50.49,50.49,0,0,0,216.1,155l6.62,11.69a1.5,1.5,0,0,1,0,1.48L216,180.05a25.5,25.5,0,0,1,20,37.35l7.3,12.39Z"
+          transform="translate(-14.69 -7.75)" />
+        <path class="cls-3" d="M240.93,232.09,234,220.35A25.5,25.5,0,0,1,191.66,219l-14.38.13L170,231.49a50.49,50.49,0,0,0,85.67,1.46l-13.46-.12a1.5,1.5,0,0,1-1.28-.74"
+          transform="translate(-14.69 -7.75)" />
+      </g>
+      <g id="orange_layer" class="hover_area">
+        <a id="mylink" xlink:href="http://www.google.co.in" aria-label="01 Sustainable Finance">
+          <path id="a" class="cls-1" d="M165,229.91l-121.25,70a2.5,2.5,0,0,1-3.41-.91l0,0A196.49,196.49,0,0,1,208.45,7.76a2.45,2.45,0,0,1,1.8.71,2.51,2.51,0,0,1,.75,1.79V151.78a53.52,53.52,0,0,0-46,78.13Z"
+            transform="translate(-14.69 -7.75)" />
+          <image width="390" height="586" transform="translate(2 0.28) scale(0.5)" xlink:href="./images/orange_img.png" />
+          <text class="big-label" transform="translate(50 105)">
+            <tspan class="small-label">01</tspan>
+            <tspan class="cls-7" x="0" y="23">Sustainable</tspan>
+            <tspan class="cls-7" x="0" y="46">Finance</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="red_layer" class="hover_area">
+        <a id="mylink" xlink:href="http://www.google.co.in" aria-label="02 Environmental Footprint">
+          <path id="a-3" data-name="a" class="cls-2" d="M262,229.9a53.52,53.52,0,0,0-46-78.13V10.26a2.5,2.5,0,0,1,.75-1.79,2.46,2.46,0,0,1,1.8-.71A196.55,196.55,0,0,1,386.69,298.95a2.5,2.5,0,0,1-3.39,1l-.05,0L262,229.9Z"
+          transform="translate(-15.69 -7.75)" />
+          <image width="390" height="586" transform="translate(200.31) scale(0.5)" xlink:href="./images/red_img.png" />
+            <text class="big-label" transform="translate(245 105)">
+              <tspan class="small-label">02</tspan>
+              <tspan class="cls-12" x="0" y="23">Environmental</tspan>
+              <tspan class="cls-17" x="0" y="46">Footprint</tspan>
+            </text>
+        </a>
+      </g>
+      <g id="magenta_layer" class="hover_area">
+          <a id="mylink" xlink:href="http://www.google.co.in" aria-label="03 Actions for the Community">
+            <path id="a-2" data-name="a" class="cls-3" d="M168,233.92a53.52,53.52,0,0,0,92.07,0l121.21,70a2.5,2.5,0,0,1,.91,3.42l0,0a196.52,196.52,0,0,1-336.26,0,2.5,2.5,0,0,1,.84-3.43l0,0Z"
+            transform="translate(-15.69 -8.75)" />
+            <image width="674" height="338" transform="translate(29.97 224.17) scale(0.5)" xlink:href="./images/magenta_img.png" />
+            <text class="big-label" transform="translate(136 285)">
+              <tspan class="small-label">03</tspan>
+              <tspan class="cls-10" x="0" y="23">Actions for the</tspan>
+              <tspan class="cls-13" x="0" y="46">Community</tspan>
+            </text>
+          </a>
+        </g>
+    </svg>
+  </div>
+</body>
+</html>
